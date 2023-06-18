@@ -8,16 +8,20 @@ const Settings = () => {
   const [fontSize, setFontSize] = useState(1);
   const [animationSpeed, setAnimationSpeed] = useState(1);
 
-  const [settings, setSettings] = useState({
-    "--background-color": "#fff",
-    "--background-light": "#fff",
-    "--primary-color": "rgb(255,0,86)",
-    "--shadow-color": "rgba(0,0,0,0.2)",
-    "--text-color": "#0A0A0A",
-    "--text-light": "#575757",
-    "--font-size": "16px",
-    "--animation-speed": 1,
-  });
+  const [settings, setSettings] = useState(
+    localStorage.getItem("settings")
+      ? JSON.parse(localStorage.getItem("settings"))
+      : {
+          "--background-color": "#fff",
+          "--background-light": "#fff",
+          "--primary-color": "rgb(255,0,86)",
+          "--shadow-color": "rgba(0,0,0,0.2)",
+          "--text-color": "#0A0A0A",
+          "--text-light": "#575757",
+          "--font-size": "16px",
+          "--animation-speed": 1,
+        }
+  );
 
   const themes = [
     {
@@ -93,7 +97,7 @@ const Settings = () => {
   useEffect(() => {
     const _settings = localStorage.getItem("settings");
     if (_settings) {
-      setSettings(_settings);
+      setSettings(JSON.parse(_settings));
     }
   }, []);
 

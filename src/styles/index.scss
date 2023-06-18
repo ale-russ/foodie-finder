@@ -23,7 +23,7 @@ body {
   font-size: var(--font-size);
   font-family: "Roboto", sans-serif;
   padding-top: 55px;
-  background-color: var(--background-color);
+  background-color: var(--background-light);
 }
 
 a {
@@ -66,7 +66,7 @@ img {
 
 @import "partials/navbar.scss";
 @import "partials/hero-section.scss";
-@import "partials/imporve-section.scss";
+@import "partials/improve-section.scss";
 @import "partials/quote-section.scss";
 @import "partials/chiefs-sections.scss";
 @import "partials/footer.scss";
@@ -121,7 +121,6 @@ img {
 
 .d-block h2 {
   font-size: 1.75em;
-  color: var(--text-color);
 }
 
 .section {
